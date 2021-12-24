@@ -1,15 +1,32 @@
-# Counter App
+# React Counter App
 
-A simple counter app made with React.
+A simple counter app made with React
+
+
+## Features
+
++ Count up or down
+
++ Start the counter from a number of choice
+
+
+## Dependencies
+
++ Node version 8.1 or above
 
 
 ## How to run
 
-+ Clone the repo
+1. Clone the repository on your machine
 
-+ Run the below commands inside cloned directory
+2. Run the below commands inside cloned directory
 
    ```bash
    $ npm install
    $ npm start
    ```
+
+
+## Screenshots
+
+<img src="screenshots/counter.png" alt="Counter" width="700"/>
