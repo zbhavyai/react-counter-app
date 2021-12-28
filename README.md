@@ -1,6 +1,6 @@
 # React Counter App
 
-A simple counter app made with React
+A simple counter app made with React. See it live [here](https://react-counter-app-bg.herokuapp.com/).
 
 
 ## Features
