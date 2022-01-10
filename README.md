@@ -1,19 +1,16 @@
 # React Counter App
 
-A simple counter app made with React. See it live [here](https://react-counter-app-bg.herokuapp.com/).
-
+A simple counter app made with React. See it live [here](https://bg-react-counter-app.netlify.app/).
 
 ## Features
 
-+ Count up or down
+-   Count up or down
 
-+ Start the counter from a number of choice
-
+-   Start the counter from a number of choice
 
 ## Dependencies
 
-+ Node version 8.1 or above
-
+-   Node version 8.1 or above
 
 ## How to run
 
@@ -21,11 +18,10 @@ A simple counter app made with React. See it live [here](https://react-counter-a
 
 2. Run the below commands inside cloned directory
 
-   ```bash
-   $ npm install
-   $ npm start
-   ```
-
+    ```bash
+    $ npm install
+    $ npm start
+    ```
 
 ## Screenshots
 
