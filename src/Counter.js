@@ -1,77 +1,68 @@
-import React, { Component } from 'react';
-import './Counter.css'
+import React from 'react';
+import './Counter.css';
 
-class Counter extends Component {
-    constructor(props) {
-        super(props);
+const Counter = () => {
+    const [value, setValue] = React.useState(0);
 
-        this.state = {
-            count: 0
-        };
-    }
-
-    componentDidMount() {
-        var input = document.getElementById("assign");
-
-        input.addEventListener("keyup", function (event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                document.getElementById("assignbutton").click();
-            }
-        });
-    }
-
-    setValue = event => {
-        let assignedValue = parseInt(document.getElementById("assign").value, 10);
-
-        // checking for NaN
-        if (assignedValue !== assignedValue) {
-            assignedValue = 0
+    const updateCounter = (newValue) => {
+        if (Number.isNaN(newValue)) {
+            newValue = 0;
         }
 
-        this.setState({
-            count: parseInt(assignedValue, 10)
-        });
+        setValue(newValue);
     };
 
+    return (
+        <React.Fragment>
+            <div className='container col redborder'>
+                <div className='input-group my-3'>
+                    <input
+                        type='number'
+                        id='assign'
+                        className='form-control'
+                        placeholder='Put a number'
+                    />
+                    <button
+                        id='assignbutton'
+                        className='input-group-text'
+                        onClick={() => {
+                            let assignedValue = parseInt(
+                                document.getElementById('assign').value,
+                                10
+                            );
 
-    increment = () => {
-        let currentCount = this.state.count
-
-        this.setState({
-            count: currentCount + 1
-        });
-    };
-
-    decrement = () => {
-        let currentCount = this.state.count
-
-        this.setState({
-            count: currentCount - 1
-        });
-    };
-
-    render() {
-        return (
-            <div className="row">
-                <div className="container col redborder">
-                    <div className="input-group my-3">
-                        <input type="number" id="assign" className="form-control" placeholder="Put a number" />
-                        <button id="assignbutton" className="input-group-text" onClick={this.setValue}>Assign</button>
-                    </div>
-                    <div className="btn-group">
-                        <button className="btn btn-warning" onClick={this.increment}>Up</button>
-                        <button className="btn btn-info" onClick={this.decrement}>Down</button>
-                    </div>
+                            updateCounter(assignedValue);
+                        }}
+                    >
+                        Assign
+                    </button>
                 </div>
-                <div className="container col">
-                    <div className="redborder my-3">
-                        <h1 className="left">{this.state.count}</h1>
-                    </div>
+                <div className='btn-group'>
+                    <button
+                        className='btn btn-warning'
+                        onClick={() => {
+                            setValue(value + 1);
+                        }}
+                    >
+                        Up
+                    </button>
+                    <button
+                        className='btn btn-info'
+                        onClick={() => {
+                            setValue(value - 1);
+                        }}
+                    >
+                        Down
+                    </button>
                 </div>
             </div>
-        )
-    }
-}
+            <div className='container col'>
+                <div className='redborder my-3'>
+                    <h1 className='left'>{value}</h1>
+                </div>
+            </div>
+        </React.Fragment>
+    );
+};
 
 export default Counter;
